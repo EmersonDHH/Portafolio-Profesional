@@ -1,52 +1,57 @@
-import './index.css'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Footer from './components/Footer'
-import TechTools from './components/TechTools'
-import ContactForm from './components/Contact'
-import AboutMe from './components/AboutMe'
-import Projects from './components/Projects'
+import { useState } from "react";
+import './index.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import TechTools from './components/TechTools';
+import ContactForm from './components/Contact';
+import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import ParticlesBackground from "./components/ParticlesBackground";
+import Loader from "./components/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div className="min-h-screen text-white font-sans">
-      <Navbar />
+    <>
+      {loading && <Loader setLoading={setLoading} />}
 
-      <main className="">
-        {/* Home Section */}
-        <section>
+      {!loading && (
+        <div className="min-h-screen text-white font-sans">
+          <ParticlesBackground />
 
-          <Home />
-        </section>
+          <Navbar />
 
-        <section>
+          <main>
+            <section>
+              <Home />
+            </section>
 
-          <AboutMe />
-        </section>
+            <section>
+              <AboutMe />
+            </section>
 
-        {/* About Section */}
-        <section>
-          <Projects/>
+            <section>
+              <TechTools />
+            </section>
+            
+            <section>
+              <Projects />
+            </section>
 
-        </section>
-        
-        <section>
 
 
-          <TechTools />
+            <section>
+              <ContactForm />
+            </section>
+          </main>
 
-        </section>
-
-        <ContactForm />
-
-        {/* Contact Section */}
-        <section>
-
-        </section>
-      </main>
-      <Footer />
-    </div>
-  )
+          <Footer />
+        </div>
+      )}
+    </>
+  );
 }
 
-export default App
+export default App;

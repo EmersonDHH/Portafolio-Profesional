@@ -1,48 +1,88 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-// import avatar from '../assets/avatar.jpg'; // Reemplaza con tu foto
+import React from "react";
+import { motion } from "framer-motion";
+import { Code, Database, TrendingUp, Layers } from "lucide-react";
+
+const skills = [
+  {
+    icon: <Code size={28} />,
+    title: "Desarrollo Frontend",
+    description: "Creación de interfaces web con React, HTML, CSS y JavaScript."
+  },
+  {
+    icon: <Database size={28} />,
+    title: "Bases de Datos",
+    description: "Trabajo con SQL Server y MongoDB en proyectos web."
+  },
+  {
+    icon: <Layers size={28} />,
+    title: "Backend y APIs",
+    description: "Desarrollo de APIs REST usando Node.js y ASP.NET Core."
+  },
+  {
+    icon: <TrendingUp size={28} />,
+    title: "Mejora Continua",
+    description: "Compromiso con el aprendizaje y la optimización constante."
+  }
+];
 
 const AboutMe = () => {
   return (
-    <section
-      id="SobreMi"
-      className="py-20 text-white"
-    >
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-        {/* Avatar Foto */}
+    <section id="sobreMi" className="py-20 text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Título y descripción */}
         <motion.div
-          className="flex justify-center md:justify-start"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          className="text-center mb-12"
         >
-          <img
-            src=""
-            alt="Foto de [Tu Nombre]"
-            className="w-64 h-64 rounded-full border-4 border-[#4ACAE2] object-cover"
-          />
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            className="text-4xl md:text-5xl font-extrabold text-[#4ACAE2]"
+          >
+            Sobre mí
+          </motion.h2>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            className="mt-4 text-[#B3B3B3] text-lg max-w-2xl mx-auto"
+          >
+            Desarrollador con experiencia en aplicaciones web Full-Stack, trabajando con tecnologías como React, Node.js, C# y bases de datos. Proactivo, adaptable y comprometido con el aprendizaje constante y la creación de soluciones de valor.
+          </motion.p>
         </motion.div>
 
-        {/* Texto Sobre Mí */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6"
-        >
-          <h2 className="text-4xl font-extrabold text-[#4ACAE2]">Sobre mí</h2>
-          <p className="text-lg text-[#B3B3B3] leading-relaxed">
-            ¡Hola! Soy [Tu Nombre], desarrollador full-stack con pasión por crear
-            soluciones web elegantes y funcionales. Me especializo en tecnologías
-            como React, Node.js y bases de datos SQL/NoSQL.
-          </p>
-          <ul className="list-disc list-inside text-[#B3B3B3] space-y-2">
-            <li>🔹 Experiencia en desarrollo de SPAs con React y Tailwind CSS.</li>
-            <li>🔹 Implementación de APIs REST y GraphQL con Node.js.</li>
-            <li>🔹 Gestión de bases de datos en PostgreSQL y MongoDB.</li>
-            <li>🔹 Apasionado por la optimización de rendimiento y UX.</li>
-          </ul>
-        </motion.div>
+        {/* Grid de skills */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
+              className="bg-[#2D2D2D]/60 backdrop-blur-sm border border-[#4ACAE2]/20 rounded-lg p-6 flex items-start space-x-4 hover:shadow-[0_0_20px_#4ACAE220]"
+            >
+              <div className="text-[#4ACAE2]">{skill.icon}</div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">{skill.title}</h3>
+                <p className="text-[#B3B3B3] mt-1">{skill.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
