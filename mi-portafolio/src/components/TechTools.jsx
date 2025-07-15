@@ -77,7 +77,7 @@ export default function TechTools() {
   };
 
   return (
-    <section id="tech-tools" className="py-16 px-4 md:px-8  text-white">
+    <section id="herramientas" className="py-16 px-4 md:px-8  text-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Herramientas Tecnológicas

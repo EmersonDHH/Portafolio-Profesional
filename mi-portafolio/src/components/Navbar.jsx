@@ -4,9 +4,9 @@ import { Github, Linkedin, Globe, ChevronDown, Menu, X } from 'lucide-react'
 import logo from '../assets/logo-512.png'
 
 const navItems = [
-  { name: 'Inicio',     href: '#inicio' },
+  { name: 'Inicio',     href: '#' },
   { name: 'Sobre Mi',    href: '#sobreMi' },
-  { name: 'Habilidades', href: '#habilidades' },
+  { name: 'Herramientas', href: '#herramientas' },
   { name: 'Proyectos', href: '#proyectos' },
   { name: 'Contacto',  href: '#contacto' },
 ]
@@ -35,8 +35,8 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:px-6">
         {/* Logo + marca */}
-        <a href="#home" className="flex items-center space-x-2">
-          <img src={logo} alt="EmerSoft Logo" className="w-8 h-8" />
+        <a href="#" className="flex items-center space-x-2">
+          {/* <img src={logo} alt="EmerSoft Logo" className="w-8 h-8" /> */}
           <span className="text-xl font-bold text-[#4ACAE2]">EmerSoft</span>
         </a>
 
@@ -54,7 +54,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-[#B3B3B3] hover:text-[#4ACAE2] transition-colors"
+              className="text-[#B3B3B3]  hover:text-[#4ACAE2] transition-colors"
             >
               {item.name}
             </a>
