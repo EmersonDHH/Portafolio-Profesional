@@ -75,7 +75,7 @@ const AboutMe = () => {
               transition={{ duration: 0.3 }}
               className="bg-[#2D2D2D]/60 backdrop-blur-sm border border-[#4ACAE2]/20 rounded-lg p-6 flex items-start space-x-4 hover:shadow-[0_0_20px_#4ACAE220]"
             >
-              <div className="text-[#4ACAE2]">{skill.icon}</div>
+              <div className="text-[#4ACAE2] pt-4">{skill.icon}</div>
               <div>
                 <h3 className="text-xl font-semibold text-white">{skill.title}</h3>
                 <p className="text-[#B3B3B3] mt-1">{skill.description}</p>

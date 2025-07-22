@@ -84,7 +84,7 @@ const Home = () => {
           className="text-5xl md:text-6xl font-extrabold tracking-tight text-[#4ACAE2]"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          transition={{ delay: 2, duration: 0.8, ease: "easeOut" }}
         >
           EmerSoft
         </motion.h1>
@@ -105,7 +105,7 @@ const Home = () => {
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
         >
           <motion.a
-            href="/cv/CV-EmerSoft.pdf"
+            href="/Curriculum-Emerson-Hidalgo-Espanol.pdf"
             download
             className="flex items-center justify-center gap-2 px-6 py-3 bg-[#4ACAE2] text-gray-900 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_20px_#4ACAE2] transform transition"
             whileHover={{ scale: 1.05 }}

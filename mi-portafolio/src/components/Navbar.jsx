@@ -29,9 +29,9 @@ export default function Navbar() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`sticky top-0 z-50 w-full backdrop-blur-sm transition-colors duration-300 ${
-        atTop ? 'bg-[#2D2D2D]/30' : 'bg-[#2D2D2D]'
-      }`}
+      className={`sticky top-0 z-50 w-full backdrop-blur-sm transition-colors duration-300 ${atTop ? 'bg-[#2D2D2D]/30' : 'bg-[#2D2D2D]'
+        }`}
+
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:px-6">
         {/* Logo */}
@@ -74,10 +74,10 @@ export default function Navbar() {
         {/* Íconos */}
         <div className="hidden md:flex items-center space-x-4">
           {[{
-            href: 'https://github.com',
+            href: 'https://github.com/EmersonDHH',
             icon: <Github size={20} />
           }, {
-            href: 'https://linkedin.com',
+            href: 'www.linkedin.com/in/emerson-hidalgo',
             icon: <Linkedin size={20} />
           }, {
             href: '#',
@@ -106,7 +106,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className={`md:hidden overflow-hidden transition-colors duration-300 ${atTop ? 'bg-[#2D2D2D]/50' : 'bg-[#2D2D2D]'}`}
+            className={`md:hidden overflow-hidden transition-colors duration-100 ${atTop ? 'bg-[#2D2D2D]/50' : 'bg-[#2D2D2D]'}`}
           >
             <nav className="flex flex-col items-center space-y-4 py-4">
               {navItems.map((item) => (

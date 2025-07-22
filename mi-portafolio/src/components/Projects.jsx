@@ -1,40 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo512 from "../assets/logo-512.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import projects from "../data/projectsData";
 
 export default function Projects() {
-  const projects = [
-    {
-      image: logo512,
-      title: "Proyecto 1",
-      description: "Este es el primer proyecto. Una breve descripción aquí.",
-      link: "#",
-    },
-    {
-      image: logo512,
-      title: "Proyecto 2",
-      description: "Este es el segundo proyecto. Más detalles sobre este proyecto.",
-      link: "#",
-    },
-    {
-      image: logo512,
-      title: "Proyecto 3",
-      description: "Este es el tercer proyecto. Otra descripción breve.",
-      link: "#",
-    },
-    {
-      image: logo512,
-      title: "Proyecto 4",
-      description: "Este es el cuarto proyecto. Descripción resumida.",
-      link: "#",
-    },
-    {
-      image: logo512,
-      title: "Proyecto 5",
-      description: "Este es el quinto proyecto. Información relevante.",
-      link: "#",
-    },
-  ];
+
 
   const [index, setIndex] = useState(0);
 
@@ -46,9 +16,17 @@ export default function Projects() {
     setIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % projects.length);
+    }, 6000); // Cambia cada 6 segundos
+
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
   return (
-    <section id="proyectos" className="py-20 px-4 md:px-8 text-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="proyectos" className="py-20 px-4 md:px-8 text-white w-full">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Título */}
         <motion.div
           initial="hidden"
@@ -83,23 +61,25 @@ export default function Projects() {
         </motion.div>
 
         {/* Carrusel */}
-        <div className="relative flex items-center justify-center w-full max-w-5xl mx-auto mt-8">
-          <AnimatePresence exitBeforeEnter>
+        <div className="relative flex items-center justify-center w-full max-w-7xl mx-auto mt-8">
+          <AnimatePresence mode="wait">
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 1, ease: "easeOut" }}
               className="w-full"
             >
               <div className="flex flex-col md:flex-row bg-[#2D2D2D]/60 backdrop-blur-sm border border-[#4ACAE2]/20 rounded-lg overflow-hidden hover:shadow-[0_0_20px_#4ACAE220] transition">
                 <img
                   src={projects[index].image}
                   alt={projects[index].title}
-                  className="w-full md:w-1/2 h-64 md:h-[400px] object-cover"
+                  className="w-full md:w-2/3 h-64 md:h-[400px] object-cover"
                 />
-                <div className="p-6 flex flex-col justify-between w-full md:w-1/2">
+                <div className="p-6 flex flex-col justify-between w-full md:w-1/3">
+
                   <div>
                     <h3 className="text-2xl font-bold text-[#4ACAE2] mb-2">
                       {projects[index].title}
@@ -126,16 +106,15 @@ export default function Projects() {
             onClick={prev}
             className="bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
           >
-            ◀
+            <ChevronLeft className="w-5 h-5" />
           </button>
           <div className="flex gap-2">
             {projects.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full ${
-                  i === index ? "bg-[#4ACAE2]" : "bg-[#4ACAE2]/30"
-                }`}
+                className={`w-3 h-3 rounded-full transition ${i === index ? "bg-[#4ACAE2]" : "bg-[#4ACAE2]/30"
+                  }`}
               />
             ))}
           </div>
@@ -143,7 +122,7 @@ export default function Projects() {
             onClick={next}
             className="bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
           >
-            ▶
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
       </div>

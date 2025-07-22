@@ -30,15 +30,15 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <Github className="text-[#4ACAE2]" />
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">GitHub</a>
+              <a href="https://github.com/EmersonDHH" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">GitHub</a>
             </li>
             <li className="flex items-center gap-2">
               <Linkedin className="text-[#4ACAE2]" />
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">LinkedIn</a>
+              <a href="www.linkedin.com/in/emerson-hidalgo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">LinkedIn</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="text-[#4ACAE2]" />
-              <a href="mailto:tuemail@correo.com" className="hover:text-white transition">Email</a>
+              <a href="mailto:ehidalgoh@ucenfotec.ac.cr" className="hover:text-white transition">Email</a>
             </li>
           </ul>
         </div>

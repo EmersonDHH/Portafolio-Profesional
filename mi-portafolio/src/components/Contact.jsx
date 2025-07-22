@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('')
+  const formRef = useRef()
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -13,7 +15,26 @@ export default function ContactForm() {
   const handleSubmit = async e => {
     e.preventDefault()
     setStatus('Enviando...')
-    // Simulación de envío
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus('Mensaje Enviado!')
+        setForm({ name: '', email: '', message: '' })
+
+        setTimeout(() => setStatus(''), 3000)
+      })
+      .catch(error => {
+        console.error(error)
+        setStatus('Error al enviar. Intenta de nuevo.')
+        setTimeout(() => setStatus(''), 3000)
+      })
+
     setTimeout(() => {
       setStatus('¡Mensaje enviado!')
       setForm({ name: '', email: '', message: '' })
@@ -23,9 +44,10 @@ export default function ContactForm() {
 
   return (
     <motion.form
+      ref={formRef}
       id="contacto"
       onSubmit={handleSubmit}
-      className="w-full p-8 space-y-6"
+      className="w-full p-8 space-y-6 "
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
