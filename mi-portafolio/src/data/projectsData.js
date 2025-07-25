@@ -1,4 +1,3 @@
-
 import proyecto1 from "../assets/projects/Ecosecha.png";
 // import proyecto2 from "../assets/projects/logo-512-copy.png";
 import proyecto3 from "../assets/projects/HealthTag.png";
@@ -9,33 +8,42 @@ const projects = [
   {
     image: proyecto1,
     title: "Ecosecha",
-    description: "Este es el primer proyecto. Una breve descripción aquí.",
-    link: "#"
+    description:
+      "Plataforma web creada para ayudar a agricultores costarricenses a promocionar y vender sus productos en línea de forma eficiente.",
+    link: "#",
+    technologies: ["Node.js", "MongoDB"],
   },
-//   {
-//     image: proyecto2,
-//     title: "Proyecto 2",
-//     description: "Este es el segundo proyecto. Más detalles sobre este proyecto.",
-//     link: "#"
-//   },
   {
     image: proyecto3,
     title: "HealthTag",
-    description: "Este es el tercer proyecto. Otra descripción breve.",
-    link: "#"
+    description:
+      "Sistema de alerta médica basado en NFC para acceder a información clave en emergencias.",
+    link: "https://github.com/Alexlop175Cenfotec/HealthTag",
+    technologies: [".NET", "SQL Server", "Bootstrap", "JS"],
   },
   {
     image: proyecto4,
     title: "SMT",
-    description: "Este es el cuarto proyecto. Descripción resumida.",
-    link: "#"
+    description:
+      "Sistema de multas de tránsito con roles de usuario y reconocimiento de placas mediante inteligencia artificial.",
+    link: "https://github.com/Alexlop175Cenfotec/Proyecto2",
+    technologies: [
+      ".NET",
+      "React",
+      "Tailwind",
+      "SQL Server",
+      "MongoDB",
+      "Python (IA)",
+    ],
   },
   {
     image: proyecto5,
     title: "CenfoScore",
-    description: "Este es el quinto proyecto. Información relevante.",
-    link: "#"
-  }
+    description:
+      "Plataforma para que los estudiantes califiquen profesores y tomen decisiones informadas sobre sus cursos.",
+    link: "#",
+    technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
+  },
 ];
 
 export default projects;
