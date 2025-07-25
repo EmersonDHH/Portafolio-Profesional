@@ -9,6 +9,7 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import ParticlesBackground from "./components/ParticlesBackground";
 import Loader from "./components/Loader";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -35,12 +36,10 @@ function App() {
             <section>
               <TechTools />
             </section>
-            
+
             <section>
               <Projects />
             </section>
-
-
 
             <section>
               <ContactForm />
@@ -48,6 +47,9 @@ function App() {
           </main>
 
           <Footer />
+
+          <ScrollTop />
+
         </div>
       )}
     </>

@@ -43,74 +43,85 @@ export default function ContactForm() {
   }
 
   return (
-    <motion.form
-      ref={formRef}
-      id="contacto"
-      onSubmit={handleSubmit}
-      className="w-full p-8 space-y-6 "
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <h2 className="text-3xl font-bold text-center text-[#4ACAE2]">
-        Contáctame
-      </h2>
-
-      <div className="flex flex-col">
-        <label htmlFor="name" className="mb-2 text-sm text-[#B3B3B3]">
-          Nombre
-        </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="w-full p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
-          placeholder="Tu nombre"
-        />
-      </div>
-
-      <div className="flex flex-col">
-        <label htmlFor="email" className="mb-2 text-sm text-[#B3B3B3]">
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="w-full p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
-          placeholder="tu@correo.com"
-        />
-      </div>
-
-      <div className="flex flex-col">
-        <label htmlFor="message" className="mb-2 text-sm text-[#B3B3B3]">
-          Mensaje
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          rows="5"
-          value={form.message}
-          onChange={handleChange}
-          required
-          className="w-full p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white resize-none"
-          placeholder="Escribe tu mensaje aquí"
-        />
-      </div>
-
-      <button
-        type="submit"
-        disabled={status === 'Enviando...'}
-        className="w-full py-3 bg-[#4ACAE2] text-[#1E1E1E] font-semibold rounded-md hover:bg-[#4ACAE2]/90 transition disabled:opacity-50"
+    <div id="contacto" className="max-w-7xl mx-auto pb-6 md: px-4 scroll-mt-18 sm:px-4">
+      <motion.form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="w-full space-y-6 "
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        {status || 'Enviar Mensaje'}
-      </button>
-    </motion.form>
+        <h2 className="text-4xl  font-bold text-center text-[#4ACAE2]">
+          Contáctame
+        </h2>
+
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          className="mt-4 text-[#B3B3B3] text-center text-lg max-w-2xl mx-auto"
+        >
+          Conectemos para construir soluciones eficientes y escalables.
+        </motion.p>
+
+        <div className="flex flex-col">
+          <label htmlFor="name" className="mb-2 text-sm text-[#B3B3B3]">
+            Nombre
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
+            placeholder="Tu nombre"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="email" className="mb-2 text-sm text-[#B3B3B3]">
+            Correo electrónico
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
+            placeholder="tu@correo.com"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="message" className="mb-2 text-sm text-[#B3B3B3]">
+            Mensaje
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            value={form.message}
+            onChange={handleChange}
+            required
+            className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white resize-none"
+            placeholder="Escribe tu mensaje aquí"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={status === 'Enviando...'}
+          className="w-full hover:cursor-pointer py-3 bg-[#4ACAE2] text-[#1E1E1E] font-semibold rounded-md hover:bg-[#4ACAE2]/90 transition disabled:opacity-50"
+        >
+          {status || 'Enviar Mensaje'}
+        </button>
+      </motion.form>
+    </div>
   )
 }

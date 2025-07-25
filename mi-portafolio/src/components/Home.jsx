@@ -3,9 +3,10 @@ import React from "react";
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import logo from '../assets/appleIcon.png';
 
+
 const Home = () => {
   const scrollDown = () => {
-    const next = document.getElementById("habilidades");
+    const next = document.querySelector('#sobreMi');
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
 

@@ -1,8 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Globe, ChevronDown, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion'; // 🚀 Para animaciones
-import logo from '../assets/logo-512.png';
+import { motion, AnimatePresence } from 'framer-motion'; 
 
 const navItems = [
   { name: 'Inicio', href: '#' },
@@ -77,7 +76,7 @@ export default function Navbar() {
             href: 'https://github.com/EmersonDHH',
             icon: <Github size={20} />
           }, {
-            href: 'www.linkedin.com/in/emerson-hidalgo',
+            href: 'https://www.linkedin.com/in/emerson-hidalgo/',
             icon: <Linkedin size={20} />
           }, {
             href: '#',

@@ -12,10 +12,10 @@ import {
   SiOracle,
   SiMongodb,
   SiMysql,
-  SiGit,
-  SiTailwindcss
+  SiGithub,
+  SiTailwindcss,
 } from 'react-icons/si';
-
+import { FaDatabase, FaJava, FaNodeJs } from 'react-icons/fa'; // Ícono genérico
 // Define your technology categories and items
 const techCategories = [
   {
@@ -30,10 +30,10 @@ const techCategories = [
   {
     title: 'Back-end',
     items: [
-      { name: 'Java', icon: SiHtml5 },
+      { name: 'Java', icon: FaJava },
       { name: 'Spring Boot', icon: SiSpringboot },
-      { name: 'C#', icon: SiHtml5 },
-      { name: '.NET', icon: SiDotnet },
+      { name: 'NodeJS', icon: FaNodeJs },
+      { name: 'ASP.NET Core', icon: SiDotnet },
     ],
   },
   {
@@ -42,13 +42,13 @@ const techCategories = [
       { name: 'Oracle', icon: SiOracle },
       { name: 'MongoDB', icon: SiMongodb },
       { name: 'MySQL', icon: SiMysql },
-      { name: 'SQL Server', icon: SiHtml5 },
+      { name: 'SQL Server', icon: FaDatabase },
     ],
   },
   {
     title: 'Otros',
     items: [
-      { name: 'Git', icon: SiGit },
+      { name: 'GitHub', icon: SiGithub },
     ],
   },
 ];
@@ -77,8 +77,8 @@ export default function TechTools() {
   };
 
   return (
-    <section id="herramientas" className="py-5 px-4 md:px-8  text-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="herramientas" className="py-5 px-4 md:px-8 scroll-mt-14 text-white">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"

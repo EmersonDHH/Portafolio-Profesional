@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import projects from "../data/projectsData";
-
+import { SiGithub } from 'react-icons/si';
 export default function Projects() {
 
 
@@ -16,13 +16,13 @@ export default function Projects() {
     setIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % projects.length);
-    }, 6000); // Cambia cada 6 segundos
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % projects.length);
+  //   }, 6000); // Cambia cada 6 segundos
 
-    return () => clearInterval(interval);
-  }, [projects.length]);
+  //   return () => clearInterval(interval);
+  // }, [projects.length]);
 
   return (
     <section id="proyectos" className="py-20 px-4 md:px-8 text-white w-full">
@@ -76,7 +76,7 @@ export default function Projects() {
                 <img
                   src={projects[index].image}
                   alt={projects[index].title}
-                  className="w-full md:w-2/3 h-64 md:h-[400px] object-cover"
+                  className="w-full h-60 sm:h-72 md:w-2/3 md:h-[400px] object-cover"
                 />
                 <div className="p-6 flex flex-col justify-between w-full md:w-1/3">
 
@@ -88,11 +88,22 @@ export default function Projects() {
                       {projects[index].description}
                     </p>
                   </div>
+                  <div className="flex flex-wrap gap-2 justify-center mt-4">
+                    {projects[index].technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 border cursor-pointer transition-all hover:bg-[#4ACAE2] border-[#4ACAE2] rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
                   <a
                     href={projects[index].link}
-                    className="inline-block bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] font-semibold px-4 py-2 rounded transition"
+                    className="inline-flex items-center text-center justify-center bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] font-semibold px-4 py-2 mt-3 rounded transition"
                   >
-                    Ver más
+                    Ver en GitHub <SiGithub className="ml-2" />
                   </a>
                 </div>
               </div>
@@ -104,7 +115,7 @@ export default function Projects() {
         <div className="mt-6 flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
+            className="bg-[#4ACAE2] hover:cursor-pointer hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -113,14 +124,14 @@ export default function Projects() {
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full transition ${i === index ? "bg-[#4ACAE2]" : "bg-[#4ACAE2]/30"
+                className={`w-3 h-3 rounded-full hover:cursor-pointer transition ${i === index ? "bg-[#4ACAE2]" : "bg-[#4ACAE2]/30"
                   }`}
               />
             ))}
           </div>
           <button
             onClick={next}
-            className="bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
+            className="bg-[#4ACAE2] hover:cursor-pointer hover:bg-[#37a2b0] text-[#1E1E1E] w-10 h-10 rounded-full flex items-center justify-center transition"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
