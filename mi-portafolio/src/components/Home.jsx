@@ -6,6 +6,7 @@ import logo from '../assets/appleIcon.png';
 import { useTranslation } from 'react-i18next';
 
 
+
 const Home = () => {
   const scrollDown = () => {
     const next = document.querySelector('#sobreMi');
