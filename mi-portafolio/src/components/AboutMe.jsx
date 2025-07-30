@@ -1,31 +1,39 @@
+/* eslint-disable no-unused-vars */
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, Database, TrendingUp, Layers } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
-const skills = [
-  {
-    icon: <Code size={28} />,
-    title: "Desarrollo Frontend",
-    description: "Creación de interfaces web con React, HTML, CSS y JavaScript."
-  },
-  {
-    icon: <Database size={28} />,
-    title: "Bases de Datos",
-    description: "Trabajo con SQL Server y MongoDB en proyectos web."
-  },
-  {
-    icon: <Layers size={28} />,
-    title: "Backend y APIs",
-    description: "Desarrollo de APIs REST usando Node.js y ASP.NET Core."
-  },
-  {
-    icon: <TrendingUp size={28} />,
-    title: "Mejora Continua",
-    description: "Compromiso con el aprendizaje y la optimización constante."
-  }
-];
 
 const AboutMe = () => {
+
+
+  const { t } = useTranslation();
+
+  const skills = [
+    {
+      icon: <Code size={28} />,
+      title: t('about.skills.0.title'),
+      description: t('about.skills.0.description')
+    },
+    {
+      icon: <Database size={28} />,
+      title: t('about.skills.1.title'),
+      description: t('about.skills.1.description')
+    },
+    {
+      icon: <Layers size={28} />,
+      title: t('about.skills.2.title'),
+      description: t('about.skills.2.description')
+    },
+    {
+      icon: <TrendingUp size={28} />,
+      title: t('about.skills.3.title'),
+      description: t('about.skills.3.description')
+    }
+  ];
+
   return (
     <section id="sobreMi" className="py-20 px-4 md:px-8 text-white w-full">
 
@@ -52,7 +60,7 @@ const AboutMe = () => {
             }}
             className="text-4xl md:text-5xl font-extrabold text-[#4ACAE2]"
           >
-            Sobre mí
+            {t('about.title')}
           </motion.h2>
           <motion.p
             variants={{
@@ -61,7 +69,7 @@ const AboutMe = () => {
             }}
             className="mt-4 text-[#B3B3B3] text-lg max-w-2xl mx-auto"
           >
-            Desarrollador con experiencia en aplicaciones web Full-Stack, trabajando con tecnologías como React, Node.js, C# y bases de datos. Proactivo, adaptable y comprometido con el aprendizaje constante y la creación de soluciones de valor.
+            {t('about.description')}
           </motion.p>
         </motion.div>
 

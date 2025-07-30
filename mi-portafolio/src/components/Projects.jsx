@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import projects from "../data/projectsData";
 import { SiGithub } from 'react-icons/si';
-export default function Projects() {
+import { useTranslation } from 'react-i18next';
+import dataEN from "../data/projectsData.en";
+import dataES from "../data/projectsData.es";
 
+export default function Projects() {
+  const { t } = useTranslation();
+  const lang = t.language;
+
+  const projects = lang === 'es' ? dataES : dataEN;
 
   const [index, setIndex] = useState(0);
 
@@ -15,14 +22,6 @@ export default function Projects() {
   const prev = () => {
     setIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIndex((prev) => (prev + 1) % projects.length);
-  //   }, 6000); // Cambia cada 6 segundos
-
-  //   return () => clearInterval(interval);
-  // }, [projects.length]);
 
   return (
     <section id="proyectos" className="py-20 px-4 md:px-8 text-white w-full">
@@ -47,7 +46,7 @@ export default function Projects() {
             }}
             className="text-4xl md:text-5xl font-extrabold text-[#4ACAE2]"
           >
-            Proyectos
+            {t('projects.title')}
           </motion.h2>
           <motion.p
             variants={{
@@ -56,7 +55,7 @@ export default function Projects() {
             }}
             className="mt-4 text-[#B3B3B3] text-lg max-w-2xl mx-auto"
           >
-            Algunos de los proyectos que he desarrollado recientemente.
+            {t('projects.description')}
           </motion.p>
         </motion.div>
 
@@ -103,7 +102,7 @@ export default function Projects() {
                     href={projects[index].link}
                     className="inline-flex items-center text-center justify-center bg-[#4ACAE2] hover:bg-[#37a2b0] text-[#1E1E1E] font-semibold px-4 py-2 mt-3 rounded transition"
                   >
-                    Ver en GitHub <SiGithub className="ml-2" />
+                    {t('projects.gitHub')} <SiGithub className="ml-2" />
                   </a>
                 </div>
               </div>

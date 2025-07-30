@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -15,45 +16,50 @@ import {
   SiGithub,
   SiTailwindcss,
 } from 'react-icons/si';
-import { FaDatabase, FaJava, FaNodeJs } from 'react-icons/fa'; // Ícono genérico
-// Define your technology categories and items
-const techCategories = [
-  {
-    title: 'Front-end',
-    items: [
-      { name: 'HTML5', icon: SiHtml5 },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'React', icon: SiReact },
-      { name: 'Tailwind', icon: SiTailwindcss },
-    ],
-  },
-  {
-    title: 'Back-end',
-    items: [
-      { name: 'Java', icon: FaJava },
-      { name: 'Spring Boot', icon: SiSpringboot },
-      { name: 'NodeJS', icon: FaNodeJs },
-      { name: 'ASP.NET Core', icon: SiDotnet },
-    ],
-  },
-  {
-    title: 'Bases de Datos',
-    items: [
-      { name: 'Oracle', icon: SiOracle },
-      { name: 'MongoDB', icon: SiMongodb },
-      { name: 'MySQL', icon: SiMysql },
-      { name: 'SQL Server', icon: FaDatabase },
-    ],
-  },
-  {
-    title: 'Otros',
-    items: [
-      { name: 'GitHub', icon: SiGithub },
-    ],
-  },
-];
+import { FaDatabase, FaJava, FaNodeJs } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+
+
+
 
 export default function TechTools() {
+  const { t } = useTranslation();
+
+  const techCategories = [
+    {
+      title: 'Front-End',
+      items: [
+        { name: 'HTML5', icon: SiHtml5 },
+        { name: 'JavaScript', icon: SiJavascript },
+        { name: 'React', icon: SiReact },
+        { name: 'Tailwind', icon: SiTailwindcss },
+      ],
+    },
+    {
+      title: 'Back-End',
+      items: [
+        { name: 'Java', icon: FaJava },
+        { name: 'Spring Boot', icon: SiSpringboot },
+        { name: 'NodeJS', icon: FaNodeJs },
+        { name: 'ASP.NET Core', icon: SiDotnet },
+      ],
+    },
+    {
+      title: t('technologies.categories.databases'),
+      items: [
+        { name: 'Oracle', icon: SiOracle },
+        { name: 'MongoDB', icon: SiMongodb },
+        { name: 'MySQL', icon: SiMysql },
+        { name: 'SQL Server', icon: FaDatabase },
+      ],
+    },
+    {
+      title: t('technologies.categories.others'),
+      items: [
+        { name: 'GitHub', icon: SiGithub },
+      ],
+    },
+  ];
   const allItems = techCategories.flatMap(cat => cat.items);
 
   const settings = {
@@ -98,7 +104,7 @@ export default function TechTools() {
             }}
             className="text-4xl md:text-5xl font-extrabold text-[#4ACAE2]"
           >
-            Herramientas Tecnológicas
+            {t('technologies.title')}
           </motion.h2>
           <motion.p
             variants={{
@@ -107,7 +113,7 @@ export default function TechTools() {
             }}
             className="mt-4 text-[#B3B3B3] text-lg max-w-2xl mx-auto"
           >
-            Tecnologías y frameworks que utilizo para crear aplicaciones robustas, modernas y eficientes.
+            {t('technologies.description')}
           </motion.p>
         </motion.div>
 
@@ -161,7 +167,8 @@ export default function TechTools() {
               }}
               className="text-3xl md:text-4xl font-bold text-[#4ACAE2]"
             >
-              Todas las Tecnologías
+              {t('stack.title')}
+
             </motion.h3>
             <motion.p
               variants={{
@@ -170,7 +177,7 @@ export default function TechTools() {
               }}
               className="mt-2 text-[#B3B3B3] text-lg max-w-2xl mx-auto"
             >
-              Un vistazo general a las herramientas y tecnologías que forman parte de mi stack de desarrollo.
+              {t('stack.description')}
             </motion.p>
           </motion.div>
 

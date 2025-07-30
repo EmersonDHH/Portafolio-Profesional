@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import logo from '../assets/appleIcon.png';
+import { useTranslation } from 'react-i18next';
 
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
     const next = document.querySelector('#sobreMi');
     if (next) next.scrollIntoView({ behavior: "smooth" });
   };
+
+  const { t } = useTranslation();
 
   return (
     <section
@@ -77,7 +81,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
         >
-          💻 Software Developer
+          💻 {t('hero.badge')}
         </motion.div>
 
 
@@ -96,7 +100,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
         >
-          Especializado en la construcción de plataformas digitales robustas y optimizadas, centradas en la usabilidad y las mejores prácticas de desarrollo.
+          {t('hero.description')}
         </motion.p>
 
         <motion.div
@@ -113,7 +117,7 @@ const Home = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FaDownload />
-            Descargar CV
+            {t('hero.buttons.download_cv')}
           </motion.a>
           <motion.a
             href="#contacto"
@@ -121,7 +125,7 @@ const Home = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contáctame
+            {t('hero.buttons.contact_me')}
           </motion.a>
         </motion.div>
       </motion.div>

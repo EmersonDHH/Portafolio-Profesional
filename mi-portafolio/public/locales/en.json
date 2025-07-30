@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "menu": {
+      "home": "Home",
+      "about": "About Me",
+      "tools": "Tools",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "language": "EN"
+  },
+  "hero": {
+    "badge": "Software Developer",
+    "name": "EmerSoft",
+    "description": "Specialized in building robust and optimized digital platforms, focused on usability and best development practices.",
+    "buttons": {
+      "download_cv": "Download CV",
+      "contact_me": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Developer with experience in Full-Stack web applications, working with technologies such as React, Node.js, C#, and databases. Proactive, adaptable, and committed to continuous learning and creating valuable solutions.",
+    "skills": [
+      {
+        "title": "Frontend Development",
+        "description": "Building web interfaces with React, Tailwind, HTML, CSS, and JavaScript.."
+      },
+      {
+        "title": "Databases",
+        "description": "Working with SQL Server and MongoDB on web projects."
+      },
+      {
+        "title": "Backend and APIs",
+        "description": "Development of REST APIs using Node.js and ASP.NET Core."
+      },
+      {
+        "title": "Continuous Improvement",
+        "description": "Commitment to ongoing learning and constant optimization."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Technology Stack",
+    "description": "Technologies and frameworks I use to build robust, modern, and efficient applications.",
+    "categories": {
+      "databases": "Databases",
+      "others": "Others"
+    }
+  },
+  "stack": {
+    "title": "All Technologies",
+    "description": "An overview of the tools and technologies that are part of my development stack."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Some of the projects I have recently developed.",
+    "gitHub": "View on GitHub"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "Let's connect to build efficient and scalable solutions.",
+    "form": {
+      "labelName": "Name",
+      "labelEmail": "Email",
+      "labelMessage": "Message",
+      "name": "Your name",
+      "email": "you@email.com",
+      "message": "Write your message here",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "slogan": "Coding ideas, creating realities.",
+    "social": "Social",
+    "navigation": "Navigation",
+    "rights": "All rights reserved",
+    "error": "Error sending message. Please try again",
+    "sent": "Message Sent!",
+    "sending": "Sending..."
+  }
+}

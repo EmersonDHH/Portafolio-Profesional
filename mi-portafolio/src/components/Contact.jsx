@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm() {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('')
   const formRef = useRef()
@@ -14,7 +18,7 @@ export default function ContactForm() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    setStatus('Enviando...')
+    setStatus(t('footer.sending'))
 
     emailjs
       .sendForm(
@@ -24,19 +28,19 @@ export default function ContactForm() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        setStatus('Mensaje Enviado!')
+        setStatus(t('footer.sent'))
         setForm({ name: '', email: '', message: '' })
 
         setTimeout(() => setStatus(''), 3000)
       })
       .catch(error => {
         console.error(error)
-        setStatus('Error al enviar. Intenta de nuevo.')
+        setStatus(t('footer.error'))
         setTimeout(() => setStatus(''), 3000)
       })
 
     setTimeout(() => {
-      setStatus('¡Mensaje enviado!')
+      setStatus(t('footer.sent'))
       setForm({ name: '', email: '', message: '' })
       setTimeout(() => setStatus(''), 3000)
     }, 1500)
@@ -53,7 +57,8 @@ export default function ContactForm() {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-4xl  font-bold text-center text-[#4ACAE2]">
-          Contáctame
+          {t('contact.title')}
+
         </h2>
 
         <motion.p
@@ -63,12 +68,13 @@ export default function ContactForm() {
           }}
           className="mt-4 text-[#B3B3B3] text-center text-lg max-w-2xl mx-auto"
         >
-          Conectemos para construir soluciones eficientes y escalables.
+          {t('contact.description')}
         </motion.p>
 
         <div className="flex flex-col">
           <label htmlFor="name" className="mb-2 text-sm text-[#B3B3B3]">
-            Nombre
+            {t('contact.form.labelName')}
+
           </label>
           <input
             type="text"
@@ -78,13 +84,14 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
-            placeholder="Tu nombre"
+            placeholder={t('contact.form.name')}
           />
         </div>
 
         <div className="flex flex-col">
           <label htmlFor="email" className="mb-2 text-sm text-[#B3B3B3]">
-            Correo electrónico
+            {t('contact.form.labelEmail')}
+
           </label>
           <input
             type="email"
@@ -94,32 +101,32 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white"
-            placeholder="tu@correo.com"
+            placeholder={t('contact.form.email')}
           />
         </div>
 
         <div className="flex flex-col">
           <label htmlFor="message" className="mb-2 text-sm text-[#B3B3B3]">
-            Mensaje
+            {t('contact.form.labelMessage')}
           </label>
           <textarea
             name="message"
             id="message"
             rows="5"
             value={form.message}
-            onChange={handleChange}
+            onChange={handleChange}F
             required
             className="w-full hover:cursor-pointer p-3 bg-transparent border border-[#4ACAE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4ACAE2] text-white resize-none"
-            placeholder="Escribe tu mensaje aquí"
+            placeholder={t('contact.form.message')}
           />
         </div>
 
         <button
           type="submit"
-          disabled={status === 'Enviando...'}
+          disabled={status === t('footer.sending')}
           className="w-full hover:cursor-pointer py-3 bg-[#4ACAE2] text-[#1E1E1E] font-semibold rounded-md hover:bg-[#4ACAE2]/90 transition disabled:opacity-50"
         >
-          {status || 'Enviar Mensaje'}
+          {status || t('contact.form.submit')}
         </button>
       </motion.form>
     </div>

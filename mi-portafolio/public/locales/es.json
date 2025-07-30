@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "brand": "EmerSoft",
+    "menu": {
+      "home": "Inicio",
+      "about": "Sobre Mí",
+      "tools": "Herramientas",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "language": "ES"
+  },
+  "hero": {
+    "badge": "Desarrollador de Software",
+    "name": "EmerSoft",
+    "description": "Especializado en la construcción de plataformas digitales robustas y optimizadas, centradas en la usabilidad y las mejores prácticas de desarrollo.",
+    "buttons": {
+      "download_cv": "Descargar CV",
+      "contact_me": "Contáctame"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Desarrollador con experiencia en aplicaciones web Full-Stack, trabajando con tecnologías como React, Node.js, C# y bases de datos. Proactivo, adaptable y comprometido con el aprendizaje constante y la creación de soluciones de valor.",
+    "skills": [
+      {
+        "title": "Desarrollo Frontend",
+        "description": "Creación de interfaces web con React, HTML, CSS y JavaScript."
+      },
+      {
+        "title": "Bases de Datos",
+        "description": "Trabajo con SQL Server y MongoDB en proyectos web."
+      },
+      {
+        "title": "Backend y APIs",
+        "description": "Desarrollo de APIs REST usando Node.js y ASP.NET Core."
+      },
+      {
+        "title": "Mejora Continua",
+        "description": "Compromiso con el aprendizaje y la optimización constante."
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Herramientas Tecnológicas",
+    "description": "Tecnologías y frameworks que utilizo para crear aplicaciones robustas, modernas y eficientes.",
+    "categories": {
+      "databases": "Bases de Datos",
+      "others": "Otros"
+    }
+  },
+  "stack": {
+    "title": "Todas las Tecnologías",
+    "description": "Un vistazo general a las herramientas y tecnologías que forman parte de mi stack de desarrollo."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Algunos de los proyectos que he desarrollado recientemente.",
+    "gitHub": "Ver en GitHub"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "description": "Conectemos para construir soluciones eficientes y escalables.",
+    "form": {
+      "labelName": "Nombre",
+      "labelEmail": "Correo",
+      "labelMessage": "Mensaje",
+      "name": "Tu nombre",
+      "email": "tu@correo.com",
+      "message": "Escribe tu mensaje aquí",
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "brand": "EmerSoft",
+    "slogan": "Codificando ideas, creando realidades.",
+    "social": "Redes",
+    "navigation": "Navigación",
+    "rights": "Todos los derechos reservados",
+    "error": "Error al enviar el mensaje. Por favor intente de nuevo",
+    "sent": "Mensaje Enviado!",
+    "sending": "Enviando..."
+  }
+}

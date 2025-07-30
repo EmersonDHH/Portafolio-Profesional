@@ -9,7 +9,7 @@ const projects = [
     image: proyecto1,
     title: "Ecosecha",
     description:
-      "Plataforma web creada para ayudar a agricultores costarricenses a promocionar y vender sus productos en línea de forma eficiente.",
+      "Platform web creada para ayudar a agricultores costarricenses a promocionar y vender sus productos en línea de forma eficiente.",
     link: "#",
     technologies: ["Node.js", "MongoDB"],
   },

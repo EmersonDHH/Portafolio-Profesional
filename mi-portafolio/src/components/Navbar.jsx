@@ -1,19 +1,25 @@
+/* eslint-disable no-unused-vars */
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Globe, ChevronDown, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion'; 
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitch from './LanguageSwitch';
 
-const navItems = [
-  { name: 'Inicio', href: '#' },
-  { name: 'Sobre Mi', href: '#sobreMi' },
-  { name: 'Herramientas', href: '#herramientas' },
-  { name: 'Proyectos', href: '#proyectos' },
-  { name: 'Contacto', href: '#contacto' },
-];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [atTop, setAtTop] = useState(true);
+  const { t } = useTranslation();
+
+
+  const navItems = [
+    { name: t('navbar.menu.home'), href: '#' },
+    { name: t('navbar.menu.about'), href: '#sobreMi' },
+    { name: t('navbar.menu.tools'), href: '#herramientas' },
+    { name: t('navbar.menu.projects'), href: '#proyectos' },
+    { name: t('navbar.menu.contact'), href: '#contacto' },
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -79,7 +85,6 @@ export default function Navbar() {
             href: 'https://www.linkedin.com/in/emerson-hidalgo/',
             icon: <Linkedin size={20} />
           }, {
-            href: '#',
             icon: <Globe size={20} />
           }].map(({ href, icon }, idx) => (
             <motion.a
@@ -91,10 +96,8 @@ export default function Navbar() {
               {icon}
             </motion.a>
           ))}
-          <button className="flex items-center space-x-1 text-[#B3B3B3] hover:text-[#4ACAE2]">
-            <span>ES</span>
-            <ChevronDown size={14} />
-          </button>
+          <LanguageSwitch />
+
         </div>
       </div>
 
@@ -117,7 +120,10 @@ export default function Navbar() {
                 >
                   {item.name}
                 </a>
+
               ))}
+              <LanguageSwitch />
+
             </nav>
           </motion.div>
         )}

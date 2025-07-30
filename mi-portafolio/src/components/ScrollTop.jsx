@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { motion, AnimatePresence } from 'framer-motion';
