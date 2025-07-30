@@ -8,8 +8,8 @@ import dataEN from "../data/projectsData.en";
 import dataES from "../data/projectsData.es";
 
 export default function Projects() {
-  const { t } = useTranslation();
-  const lang = t.language;
+  const { t, i18n } = useTranslation(); 
+  const lang = i18n.language;
 
   const projects = lang === 'es' ? dataES : dataEN;
 
