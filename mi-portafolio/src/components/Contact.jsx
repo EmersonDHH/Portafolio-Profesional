@@ -47,7 +47,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div id="contacto" className="max-w-7xl mx-auto pb-6 md: px-4 scroll-mt-18 sm:px-4">
+    <div id="contacto" className="max-w-7xl mx-auto  scroll-mt-56 sm:scroll-mt-18  pb-6 md: px-4 sm:px-4">
       <motion.form
         ref={formRef}
         onSubmit={handleSubmit}

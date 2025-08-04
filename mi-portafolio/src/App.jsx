@@ -10,6 +10,7 @@ import Projects from './components/Projects';
 import ParticlesBackground from "./components/ParticlesBackground";
 import Loader from "./components/Loader";
 import ScrollTop from "./components/ScrollTop";
+import FloatingButtons from "./components/FloatingButtons";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,7 @@ function App() {
 
           <Footer />
 
-          <ScrollTop />
+          <FloatingButtons />
 
         </div>
       )}

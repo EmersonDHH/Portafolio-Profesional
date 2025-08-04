@@ -14,7 +14,7 @@ export default function Navbar() {
 
 
   const navItems = [
-    { name: t('navbar.menu.home'), href: '#' },
+    { name: t('navbar.menu.home'), href: 'top' },
     { name: t('navbar.menu.about'), href: '#sobreMi' },
     { name: t('navbar.menu.tools'), href: '#herramientas' },
     { name: t('navbar.menu.projects'), href: '#proyectos' },
@@ -111,7 +111,7 @@ export default function Navbar() {
             className={`md:hidden overflow-hidden transition-colors duration-100 ${atTop ? 'bg-[#2D2D2D]/50' : 'bg-[#2D2D2D]'}`}
           >
             <nav className="flex flex-col items-center space-y-4 py-4">
-              {navItems.map((item) => (
+              {/* {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -121,7 +121,29 @@ export default function Navbar() {
                   {item.name}
                 </a>
 
+              ))} */}
+              {navItems.map((item) => (
+                <button
+                  key={item.href}
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(() => {
+                      if (item.href === "top") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        const target = document.querySelector(item.href);
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }
+                    }, 100);
+                  }}
+                  className="text-[#B3B3B3] hover:text-[#4ACAE2] transition-colors text-lg"
+                >
+                  {item.name}
+                </button>
               ))}
+
               <LanguageSwitch />
 
             </nav>

@@ -24,7 +24,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="proyectos" className="py-20 px-4 md:px-8 text-white w-full">
+    <section id="proyectos" className="py-20 px-4 md:px-8 scroll-mt-32 sm:scroll-mt-0  text-white w-full">
       <div className="w-full max-w-7xl mx-auto">
         {/* Título */}
         <motion.div

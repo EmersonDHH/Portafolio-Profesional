@@ -35,7 +35,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="sobreMi" className="py-20 px-4 md:px-8 text-white w-full">
+    <section id="sobreMi" className="py-20 px-4 scroll-mt-40 md:scroll-mt-0  md:px-8 text-white w-full">
 
       <div className="w-full max-w-7xl mx-auto">
         {/* Título y descripción */}

@@ -83,7 +83,7 @@ export default function TechTools() {
   };
 
   return (
-    <section id="herramientas" className="py-5 px-4 md:px-8 scroll-mt-14 text-white">
+    <section id="herramientas" className="py-5 px-4 md:px-8 scroll-mt-52 sm:scroll-mt-0  text-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
