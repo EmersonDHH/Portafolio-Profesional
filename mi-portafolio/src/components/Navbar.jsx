@@ -62,18 +62,25 @@ export default function Navbar() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={item.href === "top" ? "#" : item.href}
+              onClick={(e) => {
+                if (item.href === "top") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className="relative group text-[#B3B3B3] hover:text-[#4ACAE2] transition-colors"
             >
               {item.name}
               <span
                 className="
-                  absolute left-0 -bottom-0.5 w-0 h-0.5 bg-[#4ACAE2] transition-all
-                  group-hover:w-full
-                "
+        absolute left-0 -bottom-0.5 w-0 h-0.5 bg-[#4ACAE2] transition-all
+        group-hover:w-full
+      "
               />
             </a>
           ))}
+
         </nav>
 
         {/* Íconos */}
