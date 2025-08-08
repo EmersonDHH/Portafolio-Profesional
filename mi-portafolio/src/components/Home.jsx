@@ -111,7 +111,7 @@ const Home = () => {
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
         >
           <motion.a
-            href="/Curriculum-Emerson-Hidalgo-Espanol.pdf"
+            href={t('hero.buttons.cv_document')}
             download
             className="flex items-center justify-center gap-2 px-6 py-3 bg-[#4ACAE2] text-gray-900 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_20px_#4ACAE2] transform transition"
             whileHover={{ scale: 1.05 }}
