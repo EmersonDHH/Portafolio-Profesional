@@ -41,7 +41,7 @@ const projects = [
     title: "CenfoScore",
     description:
       "Plataforma para que los estudiantes califiquen profesores y tomen decisiones informadas sobre sus cursos.",
-    link: "#",
+    link: "https://github.com/Alexlop175/CenfoScore",
     technologies: ["FastAPI", "React", "Next.js", "Tailwind", "TypeScript"],
   },
 ];
