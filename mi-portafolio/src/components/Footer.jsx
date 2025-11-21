@@ -21,7 +21,7 @@ const Footer = () => {
     },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/emerson-hidalgo/",
+      href: "https://www.linkedin.com/in/emerson-hidalgoh/",
       icon: <Linkedin className="text-[#4ACAE2]" />,
     },
     {
