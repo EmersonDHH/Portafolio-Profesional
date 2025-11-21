@@ -89,7 +89,7 @@ export default function Navbar() {
             href: 'https://github.com/EmersonDHH',
             icon: <Github size={20} />
           }, {
-            href: 'https://www.linkedin.com/in/emerson-hidalgo/',
+            href: 'https://www.linkedin.com/in/emerson-hidalgoh/',
             icon: <Linkedin size={20} />
           }, {
             icon: <Globe size={20} />
